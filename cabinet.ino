@@ -32,6 +32,7 @@ void setup() {
   pinMode(LED_pin, OUTPUT);
   digitalWrite(LED_pin,LOW);
   Serial.begin(115200);
+  Serial.println("arduino");
 }
 
 void loop() {
@@ -87,7 +88,7 @@ void loop() {
       }
     }
   }
-    Serial.println("upsensor:  "+String(upsensor)+" "+"downsensor: "+String(downsensor));
+//     Serial.println("upsensor:  "+String(upsensor)+" "+"downsensor: "+String(downsensor));
     
   if ( millis() - timer >= delay_time && lightwheel_flag == true) {
     timer = millis();
