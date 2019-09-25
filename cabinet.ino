@@ -32,6 +32,7 @@ void setup() {
   pinMode(LED_pin, OUTPUT);
   digitalWrite(LED_pin,LOW);
   Serial.begin(115200);
+  Serial.setTimeout(50);
   Serial.println("arduino");
 }
 
@@ -39,8 +40,11 @@ void loop() {
   upsensor = analogRead(uppin);
   downsensor = analogRead(downpin);
   if (Serial.available()) {
-    input = Serial.read() - 48;
-    Serial.println(input);
+//    input = Serial.read() - 48;
+//    Serial.println(input);
+String command = Serial.readStringUntil('\n');
+//command = command.substring(1,2);
+input = command.toInt();
     
     if (input == 1) { // curtain up command and set led on
       curtain_state = "up";
