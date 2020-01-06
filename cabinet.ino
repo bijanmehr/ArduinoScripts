@@ -110,22 +110,28 @@ input = command.toInt();
 
 
 void down() {
-  digitalWrite(10, LOW);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, LOW);
+//  digitalWrite(10, LOW);
+//  digitalWrite(11, HIGH);
+//  digitalWrite(12, HIGH);
+//  digitalWrite(13, LOW);
+analogWrite(A1,255);
+analogWrite(A2,0);
 }
 
 void up() {
-  digitalWrite(10, HIGH);
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(13, HIGH);
+//  digitalWrite(10, HIGH);
+//  digitalWrite(11, LOW);
+//  digitalWrite(12, LOW);
+//  digitalWrite(13, HIGH);
+analogWrite(A1,0);
+analogWrite(A2,255);
 }
 
 void off() {
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+//  digitalWrite(10, HIGH);
+//  digitalWrite(11, HIGH);
+//  digitalWrite(12, HIGH);
+//  digitalWrite(13, HIGH);
+analogWrite(A1,0);
+analogWrite(A2,0);
 }
